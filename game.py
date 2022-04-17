@@ -52,8 +52,8 @@ def main():
 		rand_row = randint(0, BOARD_SIZE - 1)
 		rand_col = randint(0, BOARD_SIZE - 1)
 		while not player_board.computer_shot_valid(rand_row, rand_col):
-			rand_row = randint(0, BOARD_SIZE - 1)
-			rand_col = randint(0, BOARD_SIZE - 1)
+			rand_row = randint(0, BOARD_SIZE)
+			rand_col = randint(0, BOARD_SIZE)
 		print "\nComputer chose row %d column %d." %(rand_row, rand_col)
 		if player_board.receive_shot(rand_row, rand_col):
 			# opponent hit your ship!
