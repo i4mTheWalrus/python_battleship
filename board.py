@@ -32,7 +32,7 @@ class Battleship_Board:
 	def print_board(self):
 		# print the status of the board to the console
 		for row in self.board:
-			print " ".join(row)
+			print(" ".join(row))
 
 	def print_board_hidden(self):
 		# prints the status of the board to the console, and hides the ship
@@ -43,7 +43,7 @@ class Battleship_Board:
 					new_row.append("O")
 				else:
 					new_row.append(i)
-			print " ".join(new_row)
+			print(" ".join(new_row))
 
 	def place_ship_rand(self):
 		# place ship on board, represented by S
