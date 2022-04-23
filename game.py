@@ -5,9 +5,10 @@ def main():
     BOARD_SIZE = 5
 
     # Setup player board
-    print("Welcome to Batttleship!")
+    print("\n\n\n\nWelcome to Batttleship!\n")
     player_board = board.Battleship_Board(BOARD_SIZE)
-    print("Please place your ship. Choose a row and column. (1-5)")
+    player_board.print_board()
+    print("\nPlease place your ship. Choose a row and column. (1-5)")
     # force user into loop if ship chosen is out of bounds
     valid_board = False
     while not valid_board:
@@ -18,26 +19,29 @@ def main():
         valid_board = player_board.place_ship(chosen_row, chosen_col)
         if not valid_board:
             print("row or column chosen is out of bounds")
-    print("\nNice! Here's your board:")
+    print("\nNice! Here's your board:\n")
     player_board.print_board()
 
     # Setup computer board
-    print("\nGenerating the computer's board")
+    print("\nGenerating the computer's board...")
     computer_board = board.Battleship_Board(BOARD_SIZE)
     computer_board.place_ship_rand()
 
     # Begin the game!
     game_over = False
     turn = 0
+    print("Let the game begin! Press Enter to start")
+    nothingness = input()
     while not game_over:
         turn += 1
-        print("\nTurn " + str(turn))
+        print("\n\n----------------------------\n\n")
+        print("Turn " + str(turn))
         
         # player goes first
-        print("Your opponents board:")
+        print("\nYour opponents board:")
         computer_board.print_board_hidden()
         # take input to fire at opponent board
-        print("Fire your cannon!!!")
+        print("\nFire your cannon!!!")
         print("row:", end = " ")
         row = int(input())
         print("col:", end = " ")
