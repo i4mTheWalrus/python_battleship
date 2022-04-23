@@ -30,15 +30,16 @@ def main():
     # Begin the game!
     game_over = False
     turn = 0
-    print("Let the game begin! Press Enter to start")
-    nothingness = input()
+    print("Let the game begin!\n")
     while not game_over:
+        print("Press Enter to start next turn...")
+        input()
         turn += 1
         print("\n\n----------------------------\n\n")
         print("Turn " + str(turn))
         
         # player goes first
-        print("\nYour opponents board:")
+        print("\nYour opponents board:\n")
         computer_board.print_board_hidden()
         # take input to fire at opponent board
         print("\nFire your cannon!!!")
@@ -54,7 +55,8 @@ def main():
             game_over = True
             continue
         else:
-            print ("Your shot missed!")
+            print ("Your shot missed!! Press Enter for opponents turn...")
+            input()
 
         # opponents turn
         rand_row = randint(0, BOARD_SIZE - 1)
@@ -70,12 +72,12 @@ def main():
             game_over = True
             continue
         else:
-            print("Your board after opponents shot:")
+            print("Your board after opponents shot:\n")
             player_board.print_board()
 
 
     else:
-        print("Thanks for playing!")
+        print("\nThanks for playing!\n")
 
 if __name__ == "__main__":
     main()
